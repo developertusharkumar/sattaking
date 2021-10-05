@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "sattaking"
+  "defaultProject": "sattaking",
+  "cli": {
+    "analytics": "09e2cba4-4547-464e-aee3-27cca06197a4"
+  }
 }
