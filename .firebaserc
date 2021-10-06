@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "sattaking-c0f8f"
+  },
+  "targets": {
+    "sattaking-c0f8f": {
+      "hosting": {
+        "sattaking": [
+          "sattaking-c0f8f"
+        ]
+      }
+    }
+  }
+}
