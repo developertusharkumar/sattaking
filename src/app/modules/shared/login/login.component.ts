@@ -3,6 +3,7 @@ import DataModel from '../../../models/dataModel';
 import { DataService } from '../../../services/data.service';
 
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,7 +12,10 @@ import { map } from 'rxjs/operators';
 export class LoginComponent implements OnInit {
   submitted = false;
 
-  constructor(private dataService: DataService) {}
+  constructor(
+    private dataService: DataService,
+    private router: Router,
+    ) {}
 
   ngOnInit(): void {
     this.getData();
@@ -46,5 +50,9 @@ export class LoginComponent implements OnInit {
       .subscribe((data) => {
          console.log('data', data);
       });
+  }
+
+  signIn() {
+    this.router.navigate(['admin/home'])
   }
 }

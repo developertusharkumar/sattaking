@@ -10,6 +10,12 @@ import { environment } from '../environments/environment';
 import { AdminComponent } from './modules/shared/admin/admin.component';
 import { HomeComponent } from './modules/home/home.component';
 import { ErrorComponent } from './modules/error/error.component';
+import { FaqComponent } from './modules/faq/faq.component';
+import { DisclaimerComponent } from './modules/disclaimer/disclaimer.component';
+import { PrivacyPolicyComponent } from './modules/privacy-policy/privacy-policy.component';
+import { ContactUsComponent } from './modules/contact-us/contact-us.component';
+import { AboutUsComponent } from './modules/about-us/about-us.component';
+import { ResultComponent } from './modules/result/result.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +23,13 @@ import { ErrorComponent } from './modules/error/error.component';
     LoginComponent,
     AdminComponent,
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    FaqComponent,
+    DisclaimerComponent,
+    PrivacyPolicyComponent,
+    ContactUsComponent,
+    AboutUsComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,39 @@
+.link2 {
+  text-align: center;
+}
+
+.navbar span {
+  display: block;
+  color: red;
+  text-decoration: none;
+  padding: 5px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  background: #f7ffb8;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.container {
+  &-big-box {
+    background-color: #99ff99;
+    color: PINK;
+    font-weight: bold;
+    border: double 3px blue;
+    padding: 5px;
+    border-radius: 20px;
+    text-align: center;
+  }
+}
+
+marquee {
+  h1 {
+    font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto,
+      helvetica neue, Arial, sans-serif, apple color emoji, segoe ui emoji,
+      segoe ui symbol !important;
+    font-size: 14px;
+    color: red;
+    font-weight: 800;
+    word-spacing: 4px;
+  }
+}
