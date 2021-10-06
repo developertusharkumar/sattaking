@@ -7,11 +7,17 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { LoginComponent } from './modules/shared/login/login.component';
 import { environment } from '../environments/environment';
+import { AdminComponent } from './modules/shared/admin/admin.component';
+import { HomeComponent } from './modules/home/home.component';
+import { ErrorComponent } from './modules/error/error.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    AdminComponent,
+    HomeComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

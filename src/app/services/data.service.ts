@@ -28,15 +28,15 @@ export class DataService {
     return this.sattaDataRef.push(tutorial);
   }
 
-  update(key: string, value: any): Promise<void> {
-    return this.sattaDataRef.update(key, value);
-  }
+  // update(key: string, value: any): Promise<void> {
+  //   return this.sattaDataRef.update(key, value);
+  // }
 
-  delete(key: string): Promise<void> {
-    return this.sattaDataRef.remove(key);
-  }
+  // delete(key: string): Promise<void> {
+  //   return this.sattaDataRef.remove(key);
+  // }
 
-  deleteAll(): Promise<void> {
-    return this.sattaDataRef.remove();
-  }
+  // deleteAll(): Promise<void> {
+  //   return this.sattaDataRef.remove();
+  // }
 }
