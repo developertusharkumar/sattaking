@@ -1,7 +1,6 @@
-import { Injectable, NgZone } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
-import DataModel from '../models/dataModel';
-
+import * as firebase from 'firebase';
 
 
 @Injectable({
@@ -9,34 +8,16 @@ import DataModel from '../models/dataModel';
 })
 export class DataService {
 
-  private dbPath = '/sattaData';
-
-
-  sattaDataRef :AngularFireList<DataModel>
+  private dbPath = 'sattaking';
+  dbRef: firebase.default.database.Database;
 
   constructor(private db: AngularFireDatabase) {
-
-    this.sattaDataRef = db.list(this.dbPath);
+    this.dbRef = this.db.database;
   }
 
 
-  getAll(): AngularFireList<DataModel> {
-    return this.sattaDataRef;
+  getAllGames(gametype: string) {
+    return this.dbRef.ref(`${this.dbPath}/games/${gametype}`);
   }
 
-  create(tutorial: DataModel): any {
-    return this.sattaDataRef.push(tutorial);
-  }
-
-  // update(key: string, value: any): Promise<void> {
-  //   return this.sattaDataRef.update(key, value);
-  // }
-
-  // delete(key: string): Promise<void> {
-  //   return this.sattaDataRef.remove(key);
-  // }
-
-  // deleteAll(): Promise<void> {
-  //   return this.sattaDataRef.remove();
-  // }
 }

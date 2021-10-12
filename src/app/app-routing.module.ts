@@ -25,19 +25,6 @@ const routes: Routes = [
     component: ResultComponent,
   },
   {
-    path: 'admin',
-    children: [
-      {
-        path: '',
-        component: LoginComponent,
-      },
-      {
-        path: 'home',
-        component: AdminComponent,
-      },
-    ],
-  },
-  {
     path: 'disclaimer',
     component: DisclaimerComponent,
   },

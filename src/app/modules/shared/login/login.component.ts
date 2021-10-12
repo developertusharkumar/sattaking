@@ -18,19 +18,19 @@ export class LoginComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-    this.getData();
+    this.saveTutorial();
   }
 
   saveTutorial(): void {
-    const payload = {
-      key: '1',
-      title: 'Hey hello'
-    };
+    // const payload = {
+    //   key: '1',
+    //   title: 'Hey hello'
+    // };
 
-    this.dataService.create(payload).then(() => {
-      console.log('Created new item successfully!');
-      this.submitted = true;
-    });
+    // this.dataService.create(payload).then(() => {
+    //   console.log('Created new item successfully!');
+    //   this.submitted = true;
+    // });
   }
 
   newTutorial(): void {
@@ -39,17 +39,17 @@ export class LoginComponent implements OnInit {
   }
 
   getData() {
-    this.dataService
-      .getAll()
-      .snapshotChanges()
-      .pipe(
-        map((changes) =>
-          changes.map((c) => ({ key: c.payload.key, ...c.payload.val() }))
-        )
-      )
-      .subscribe((data) => {
-         console.log('data', data);
-      });
+    // this.dataService
+    //   .getAll()
+    //   .snapshotChanges()
+    //   .pipe(
+    //     map((changes) =>
+    //       changes.map((c) => ({ key: c.payload.key, ...c.payload.val() }))
+    //     )
+    //   )
+    //   .subscribe((data) => {
+    //      console.log('data', data);
+    //   });
   }
 
   signIn() {
