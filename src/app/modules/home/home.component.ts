@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
+import * as moment from 'moment';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -9,11 +11,13 @@ import { DataService } from '../../services/data.service';
 })
 export class HomeComponent implements OnInit {
   allMultipleGames: any[] = [];
+  multipleDataTable: any;
 
   constructor(private router: Router, private dataService: DataService) {}
 
   ngOnInit(): void {
     this.getAllMultipleGame();
+    this.getMultipleDataTable();
   }
 
   goToResult() {
@@ -43,5 +47,60 @@ export class HomeComponent implements OnInit {
 
       console.log('data of the all games', data);
     });
+  }
+
+  getMultipleDataTable() {
+    const dateObject = {
+      date: moment().date(),
+      month: moment().format('MMM'),
+      year: moment().year(),
+    };
+
+    console.log('data object', dateObject);
+
+    this.dataService
+      .extractDataTable('multiple', dateObject)
+      .on('value', (snapshot) => {
+        console.log('snapshot ', snapshot.val());
+        let tableChart = [];
+        const data = snapshot.val();
+
+        const dataTable :any = [];
+      
+
+        const datekeys = Object.keys(data);
+
+        datekeys.forEach((date) => {
+          // push the date "14"
+          const gameKeys = data[date];
+          const payload :any = {
+            date: `${date}-${dateObject.month}`,
+            allGames: []
+          };
+
+          const gameData = Object.entries(data[date]);  
+
+          
+          gameData.forEach((game) => {
+            console.log('game', game[1]);
+            payload['allGames'].push(game[1]);
+          })
+
+
+          dataTable.push(payload);
+
+          console.log('getting all game keys', gameKeys);
+          // console.log('entries', entries);
+
+          
+
+      
+        })
+        
+
+        console.log('data table data', dataTable);
+        this.multipleDataTable = dataTable;
+
+      });
   }
 }

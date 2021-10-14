@@ -77,3 +77,58 @@ marquee {
     }
   }
 }
+
+
+
+table.table tbody tr td,
+table.table thead tr th,
+table.table thead tr td,
+table.table thead {
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+.result {
+
+  tbody {
+    th {
+      border-color: #000;
+      background-color: #ffff79;
+      color: #FF0000;
+      font-size: 12px;
+      font-weight: bold;
+    
+    }
+
+  }
+
+  .table-head {
+    tr {
+      border-color: #000;
+      background-color: #ffff79;
+      color: #FF0000;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 0px 2px 0px 2px;
+    }
+ 
+  }
+
+  &-table {
+    font-weight: 900;
+    width: 100%;
+    /* color: #fff; */
+    font-size: 14px;
+    background: #fff;
+    /* border-color: #000; */
+    border-color: #000;
+    margin: 10px !important;
+  }
+  &-header {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: red;
+  }
+
+}

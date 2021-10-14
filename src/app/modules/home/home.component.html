@@ -123,3 +123,22 @@
   </div>
 
 </div>
+
+<div class="row result">
+   <h1 class="result-header">Result Table</h1>
+
+   <table class="table result-table">
+    <thead class="table-head">
+      <tr>
+        <td scope="col">Date</td>
+        <td scope="col" *ngFor="let game of allMultipleGames; let index = index">{{game.name}}</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let gameData of multipleDataTable; let index = index;">
+        <th scope="row">{{gameData.date}}</th>
+        <td *ngFor="let game of gameData.allGames">{{game.result}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
