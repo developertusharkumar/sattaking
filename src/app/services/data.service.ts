@@ -26,4 +26,9 @@ export class DataService {
     console.log('check', `${this.dbPath}/tables/${gametype}/${dateObject.month}-${dateObject.year}/${dateObject.date}`)
     return this.dbRef.ref(`${this.dbPath}/tables/${gametype}/${dateObject.month}-${dateObject.year}`);
   }
+
+
+  getAllCurrentGames(gametype: string) {
+    return this.dbRef.ref(`${this.dbPath}/currentGame/${gametype}`);
+  }
 }

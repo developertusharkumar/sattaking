@@ -67,15 +67,26 @@
   </div>
 </div>
 
-<section class="game">
+<section class="game multiple-game">
   <div>
     <div align="center" class="style1">
       <br />
       <b style="font-size: 30px; color: #fff" class="greenyellow">
-        FARIDABAD
+        {{ allCurrentMultipleGame.name | uppercase }}
       </b>
       <br />
-      <b style="font-size: 40px; color: #f7ff00"> WAIT </b>
+      <b
+        style="font-size: 40px; color: #f7ff00"
+        *ngIf="allCurrentMultipleGame?.result"
+      >
+        {{ allCurrentMultipleGame.result }}
+      </b>
+      <b
+        style="font-size: 40px; color: #f7ff00"
+        *ngIf="!allCurrentMultipleGame?.result"
+      >
+        WAIT
+      </b>
       <br />
     </div>
   </div>
@@ -83,7 +94,10 @@
 
 <!--  style="padding: 0 1px 0 1px; border: 1px solid black; background-color:#003300" -->
 <div class="row game-slots-area">
-  <div class="col-md-6 col-sm-6 game-column-area" *ngFor="let game of allMultipleGames">
+  <div
+    class="col-md-6 col-sm-6 game-column-area"
+    *ngFor="let game of allMultipleGames"
+  >
     <div class="game-column" style="text-align: center">
       <span
         ><a href="index.php">
@@ -97,16 +111,18 @@
               padding-right: 2px;
             "
           >
-            {{game.name}}</font
+            {{ game.name }}</font
           >
         </a></span
       ><br />
       <div class="time-font">
-        <font style="color: yellow" class="time-font">( {{game.time}} )<br /></font>
+        <font style="color: yellow" class="time-font"
+          >( {{ game.time }} )<br
+        /></font>
       </div>
       <div class="time-font">
         <span class="game-slots">
-          <font style="color: white" class="time-font">{{ 'XX' }}<br /></font>
+          <font style="color: white" class="time-font">{{ "XX" }}<br /></font>
           <img
             src="assets/new.gif"
             width="20"
@@ -114,31 +130,94 @@
             alt="Satta king | Sattaking | Satta result | Satta king online | Satta king result | Satta king live"
             title="Satta king | Sattaking | Satta result | Satta king online | Satta king result | Satta king live"
           />
-          <font style="color: white" class="time-font"> <span class="left-brac"> [ </span> {{game.result}}  <span class="right-brac">]</span><br /></font>
+          <font style="color: white" class="time-font">
+            <span class="left-brac"> [ </span> {{ game.result }}
+            <span class="right-brac">]</span><br
+          /></font>
         </span>
       </div>
-
-     
     </div>
   </div>
-
 </div>
 
-<div class="row result">
-   <h1 class="result-header">Result Table</h1>
 
-   <table class="table result-table">
-    <thead class="table-head">
-      <tr>
+<div class="row result">
+  <h1 class="result-header">Result Table</h1>
+
+  <table role="table" class="table result-table">
+    <thead role="rowgroup" class="table-head">
+      <tr  role="row">
         <td scope="col">Date</td>
-        <td scope="col" *ngFor="let game of allMultipleGames; let index = index">{{game.name}}</td>
+        <td role="cell"
+          scope="col"
+          *ngFor="let game of allMultipleGames; let index = index"
+        >
+          {{ game.name }}
+        </td>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let gameData of multipleDataTable; let index = index;">
-        <th scope="row">{{gameData.date}}</th>
-        <td *ngFor="let game of gameData.allGames">{{game.result}}</td>
+      <tr  role="row" *ngFor="let gameData of multipleDataTable; let index = index">
+        <th  role="columnheader" scope="row">{{ gameData.date }}</th>
+        <td role="cell" *ngFor="let game of gameData.allGames">{{ game.result }}</td>
       </tr>
     </tbody>
   </table>
 </div>
+
+<ng-container  *ngFor="let singleGame of singleGames">
+  
+
+<section class="game multiple-game">
+  <div>
+    <div align="center" class="style1">
+      <br />
+      <b style="font-size: 30px; color: #fff" class="greenyellow">
+        {{ singleGame.name }}
+      </b>
+      <br />
+      <b
+        style="font-size: 40px; color: #f7ff00"
+        *ngIf="allCurrentMultipleGame?.result"
+      >
+        {{ singleGame.result }}
+      </b>
+      <b
+        style="font-size: 40px; color: #f7ff00"
+        *ngIf="!allCurrentMultipleGame?.result"
+      >
+        {{ singleGame.result }}
+      </b>
+      <br />
+    </div>
+  </div>
+
+</section>
+
+
+<div class="row result">
+  <h1 class="result-header">Result Table</h1>
+
+  <table role="table" class="table result-table calculator">
+    <thead  role="rowgroup" class="table-head">
+      <tr  role="row">
+        <td  role="cell" scope="col">Time</td>
+        <td role="cell"
+          scope="col"
+          *ngFor="let time of singleGame.time_slots; let index = index"
+        >
+          {{ time.time }}
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  role="row">
+        <th role="columnheader" scope="row">{{ singleGame.name }}</th>
+        <td  role="cell" *ngFor="let slots of singleGame.time_slots">{{ slots?.result }}</td>
+      </tr>
+    </tbody> 
+  </table>
+</div>
+
+
+</ng-container>
