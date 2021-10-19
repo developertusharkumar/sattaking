@@ -129,6 +129,10 @@ export class HomeComponent implements OnInit {
       });
   }
 
+  getResults(singleGame :any) {
+    this.router.navigate([`${singleGame.name}/results`])
+  }
+
   getAllSingleGames() {
     this.dataService.getAllGames('single').on('value', (snapshot) => {
       // all the games will be converted to the array
