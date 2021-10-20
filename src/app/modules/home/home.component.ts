@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 import * as moment from 'moment';
-import { map } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-home',

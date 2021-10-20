@@ -27,8 +27,18 @@ export class DataService {
     return this.dbRef.ref(`${this.dbPath}/tables/${gametype}/${dateObject.month}-${dateObject.year}`);
   }
 
+  
+
 
   getAllCurrentGames(gametype: string) {
     return this.dbRef.ref(`${this.dbPath}/currentGame/${gametype}`);
+  }
+
+
+  getSingleGame(gametype :any,game :any) {
+    return this.dbRef.ref(`${this.dbPath}/games/${gametype}/${game}`);
+  }
+getSingleGameDataTable(gametype :any,game :any, dateObject :any) {
+    return this.dbRef.ref(`${this.dbPath}/tables/${gametype}/${dateObject.month}-${dateObject.year}/${dateObject.date}/${game}`);
   }
 }

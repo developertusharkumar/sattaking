@@ -5,9 +5,47 @@
     padding: 20px
 }
 
+
+
 table {
     width: 100%;
     margin-bottom: 1rem;
     color: #000;
     background: #efefef;
+}
+
+.results {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    &-timings , &-heading {
+        display: flex;
+    }
+
+    ul.no-slots {
+        margin-top: 50px;
+        .no-time-slots {
+            padding: 50px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            color: #fff;
+            font-size: 20px;
+        }
+    }
+   
+}
+
+
+
+ul {
+    li  {
+        background: transparent;
+        color: white;
+    }
+}
+
+
+h1 {
+    color: yellow
 }

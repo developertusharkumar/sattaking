@@ -1,28 +1,55 @@
-<div class="container">
-    <h1 >Results</h1>
-</div>
+<div class="container-fluid results">
+  
+  <div class="results-heading">
+    <div class="col-xs-6 col-sm-6 col-md-6"><h1>Time</h1></div>
+    <div class="col-xs-6 col-sm-6 col-md-6"> <h1>Result</h1></div>
+  </div>
 
-<table class="table table-bordered">
+  <ng-container >
+    <ul class="list-group" *ngIf="timings?.length > 0; else noTimeSlots" >
+      <li class="list-group-item" *ngFor="let time of timings">  
+        <div class="results-timings">
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            {{ time.time }}  
+          </div> 
+          <div class="col-xs-6 col-sm-6 col-md-6">
+            {{ time.result }}  
+          </div>
+        </div>
+      </li>
+    </ul>
+    <ng-template #noTimeSlots>
+      <ul class="no-slots">
+         <span class="no-time-slots">No Time Slot</span>  
+      </ul>
+    </ng-template>
+  </ng-container>
+</div>
+<!-- <div class="m-3">
+  <table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
+        <th scope="col" sortable="name">Country</th>
+        <th scope="col" sortable="area">Area</th>
+        <th scope="col" sortable="population">Population</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
+      <tr
+        *ngFor="let country of countries | slice: (page-1) * pageSize : page * pageSize; index as i">
+        <th scope="row">{{ (page -1) * pageSize + i + 1 }}</th>
+        <td>
+          <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2"
+            style="width: 20px">
+          {{ country.name }}
+        </td>
+        <td>{{ country.area | number }}</td>
+        <td>{{ country.population | number }}</td>
       </tr>
     </tbody>
   </table>
+
+  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [maxSize]="5" [boundaryLinks]="true"
+    [pageSize]="pageSize" class="d-flex justify-content-center"></ngb-pagination>
+</div> -->

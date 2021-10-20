@@ -16,6 +16,7 @@ import { PrivacyPolicyComponent } from './modules/privacy-policy/privacy-policy.
 import { ContactUsComponent } from './modules/contact-us/contact-us.component';
 import { AboutUsComponent } from './modules/about-us/about-us.component';
 import { ResultComponent } from './modules/result/result.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ResultComponent } from './modules/result/result.component';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
