@@ -17,6 +17,7 @@ import { ContactUsComponent } from './modules/contact-us/contact-us.component';
 import { AboutUsComponent } from './modules/about-us/about-us.component';
 import { ResultComponent } from './modules/result/result.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FooterComponent } from './modules/shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     PrivacyPolicyComponent,
     ContactUsComponent,
     AboutUsComponent,
-    ResultComponent
+    ResultComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

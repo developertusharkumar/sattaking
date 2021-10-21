@@ -9,6 +9,7 @@ import { HomeComponent } from './modules/home/home.component';
 import { PrivacyPolicyComponent } from './modules/privacy-policy/privacy-policy.component';
 import { ResultComponent } from './modules/result/result.component';
 import { AdminComponent } from './modules/shared/admin/admin.component';
+import { FooterComponent } from './modules/shared/footer/footer.component';
 import { LoginComponent } from './modules/shared/login/login.component';
 
 const routes: Routes = [
@@ -43,6 +44,10 @@ const routes: Routes = [
   {
     path: 'faq',
     component: FaqComponent,
+  },
+  {
+    path: 'footer',
+    component: FooterComponent,
   },
 
 

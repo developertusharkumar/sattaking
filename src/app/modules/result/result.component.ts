@@ -100,7 +100,7 @@ export class ResultComponent implements OnInit {
   allCountries!: { name: string; flag: string; area: number; population: number; }[];
   dateObject: { date: number; month: string; year: number; };
   game: any;
-  timings!: any[];
+  timings?: any[];
   currentDate: any;
 
   constructor(
