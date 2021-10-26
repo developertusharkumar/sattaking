@@ -1,8 +1,8 @@
 <div class="container-fluid results">
   
   <div class="results-heading">
-    <div class="col-xs-6 col-sm-6 col-md-6"><h1>Time</h1></div>
-    <div class="col-xs-6 col-sm-6 col-md-6"> <h1>Result</h1></div>
+    <div class="col-xs-6 col-sm-6 col-md-6"><h1 class="head-color">Time</h1></div>
+    <div class="col-xs-6 col-sm-6 col-md-6"> <h1 class="head-color">Result</h1></div>
   </div>
 
   
@@ -10,10 +10,10 @@
     <ul class="list-group" *ngIf="timings?.length! > 0; else noTimeSlots" >
       <li class="list-group-item" *ngFor="let time of timings">  
         <div class="results-timings">
-          <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="col-xs-6 col-sm-6 col-md-6 result-color">
             {{ time.time }}  
           </div> 
-          <div class="col-xs-6 col-sm-6 col-md-6">
+          <div class="col-xs-6 col-sm-6 col-md-6 result-color">
             {{ time.result }}  
           </div>
         </div>
