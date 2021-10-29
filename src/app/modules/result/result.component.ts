@@ -147,10 +147,10 @@ export class ResultComponent implements OnInit {
         })
   
         console.log('timings', timings);
-        const slicedArray = timings.slice();
-        const reverseArray = slicedArray.reverse();
-        console.log('reverse the timings', reverseArray);
-        this.timings = reverseArray;
+        // const slicedArray = timings.slice();
+        // const reverseArray = slicedArray.reverse();
+        // console.log('reverse the timings', reverseArray);
+        this.timings = timings;
       } else {
         this.timings = [];
       }

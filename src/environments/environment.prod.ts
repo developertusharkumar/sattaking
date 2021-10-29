@@ -12,3 +12,48 @@ export const environment = {
     measurementId: 'G-9DEEX37WXD',
   },
 };
+
+
+
+
+// filter
+// specialization
+// class
+// types , data filter
+ var data = [
+
+		 {
+       name: 'tushar',
+       specialization: 'dentist',
+       class: 'B'
+       
+     },
+
+		 {
+       name: 'shubham',
+       specialization: 'dentist',
+       class: 'A'
+       
+     },
+
+		 {
+       name: 'nishant',
+       specialization: 'dentist',
+       class: 'B'
+       
+     },
+
+		 {
+       name: 'shubham',
+       specialization: 'surgeon',
+       class: 'C'
+     },
+		 {
+       name: 'prashant',
+       specialization: 'heart specialist',
+       class: 'C'
+     },
+
+				
+
+	]
