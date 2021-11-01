@@ -42,8 +42,12 @@ export class HomeComponent implements OnInit {
   getAllMultipleGame() {
     this.dataService.getAllGames('multiple').on('value', (snapshot) => {
       this.allMultipleGames = this.extractArrayFromObjects(snapshot.val());
+      this.allMultipleGames = this.allMultipleGames?.slice(0, 4);
+      
     });
   }
+
+
 
   getAllCurrentMultipleGames() {
     this.dataService.getAllCurrentGames('multiple').on('value', (snapshot) => {
@@ -71,8 +75,14 @@ export class HomeComponent implements OnInit {
               snapshot.val()
             );
             const singleGamesData = snapshot.val();
-            const timeSlots =  singleGamesData[this.dateObject.date][game.name]['time_slots'];
-            game['time_slots'] = this.extractArrayFromObjects(timeSlots);
+            console.log('single games data', singleGamesData);
+
+            if(singleGamesData) {
+              const timeSlots =  singleGamesData[this.dateObject.date][game.name]['time_slots'];
+              game['time_slots'] = this.extractArrayFromObjects(timeSlots);
+            }
+
+         
              
           });
 
@@ -98,6 +108,8 @@ export class HomeComponent implements OnInit {
         console.log('snapshot ', snapshot.val());
         let tableChart = [];
         const data = snapshot.val();
+
+        
 
         const dataTable: any = [];
 
@@ -125,7 +137,14 @@ export class HomeComponent implements OnInit {
         });
 
         console.log('data table data', dataTable);
+        console.log('date inside the table', dataTable[0].allGames)
+        dataTable[0].allGames = dataTable[0].allGames.slice(0,4);
         this.multipleDataTable = dataTable;
+
+        // this.multipleDataTable = 
+
+        
+
       });
   }
 

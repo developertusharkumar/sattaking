@@ -14,6 +14,10 @@
   cursor: pointer;
 }
 
+.container-fluid {
+  background: #000;
+}
+
 .container {
   &-big-box {
     background-color: #99ff99;
@@ -24,6 +28,10 @@
     border-radius: 20px;
     text-align: center;
   }
+}
+
+.greenyellow {
+  text-align: center;
 }
 
 marquee {
@@ -56,11 +64,16 @@ marquee {
     border: 1px solid black;
     background-color: #003300;
     padding: 30px;
+    height: 100%;
 
     &-area {
       margin: 0px;
       padding: 0px;
     }
+  }
+
+  &-current-card {
+    text-align: center;
   }
 
   &-slots {
@@ -87,6 +100,19 @@ table.table thead {
 }
 
 .result {
+  &-headers {
+    border-color: #000;
+    background-color: #ffff79;
+    color: #ff0000;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 6px 4px 5px;
+  }
+
+  &-data {
+    color: #fff;
+  }
+
   tbody {
     th {
       border-color: #000;
@@ -116,13 +142,14 @@ table.table thead {
     background: #fff;
     /* border-color: #000; */
     border-color: #000;
-    margin: 10px !important;
+    // margin: 10px !important;
   }
   &-header {
     margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 20px;
     color: red;
+    font-size: 3vw;
   }
 }
 
@@ -130,10 +157,12 @@ section.single-game {
   cursor: pointer;
 }
 
-
-
 @media only screen and (max-width: 600px) {
-    .game-column-area {
-      width: 50% ;
-    }
-} 
+  .game-column-area {
+    width: 50%;
+  }
+
+  .result-header {
+    font-size: 5vw;
+  }
+}
